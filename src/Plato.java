@@ -24,7 +24,7 @@ public class Plato {
     }
 
     public double getPrecioPlato() {
-        return this.comidaPedida.getPrecio()*this.getCantidad();
+        return this.comidaPedida.getPrecio() * this.getCantidad();
     }
 
     @Override

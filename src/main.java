@@ -17,15 +17,5 @@ public class main {
         System.out.println("Total de la Mesa "+mesa1.getNroMesa()+" = "+mesa1.costoTotalDeMesa());
         System.out.println(menu.get(3).getNombre()+" "+menu.get(3).getPrecio());
 
-
-
-
-
-
-
-
-
-
-
     }
 }
