@@ -4,7 +4,7 @@
 *bin/
 *.classpath
 *.project
-/src
+
 proyects.iml
 .idea/
 *.iml
