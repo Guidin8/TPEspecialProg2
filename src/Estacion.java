@@ -10,7 +10,7 @@ public abstract class Estacion {
         this.especialidad = especialidad;
     }
 
-    public boolean aceptaComida(Comida comida){
+    public boolean recibeComida(Comida comida){
         if(this.comida == null && aceptoComida(comida)){
             this.comida = comida;
             return true;
@@ -40,5 +40,5 @@ public abstract class Estacion {
         return getNombre().equals(estacion.getNombre());
     }
 
-    public abstract boolean aceptoComida(Comida comida);
+    protected abstract boolean aceptoComida(Comida comida);
 }
