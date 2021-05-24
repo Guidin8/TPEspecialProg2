@@ -6,5 +6,5 @@
 *.project
 .idea/
 proyects.iml
-
+.out/
 *.iml
