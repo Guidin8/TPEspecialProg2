@@ -1,3 +1,5 @@
+import App.Comida;
+
 public class Plato {
     private Comida comidaPedida;
     private int cantidad;
@@ -23,9 +25,9 @@ public class Plato {
         this.cantidad += cantidad;
     }
 
-    public double getPrecioPlato() {
+    /*public double getPrecioPlato() {
         return this.comidaPedida.getPrecio() * this.getCantidad();
-    }
+    }*/
 
     @Override
     public boolean equals(Object o) {

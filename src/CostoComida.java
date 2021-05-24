@@ -1,6 +1,6 @@
-import java.util.ArrayList;
+import App.Comida;
 
-public class CostoComida extends Comida{
+public class CostoComida extends Comida {
     //private double costoInicial; lo saco porque el costo esta en Comidas
     private static final double PROPINA=0.10;
     private static final double DIAAGITADO=0.32;
@@ -9,13 +9,13 @@ public class CostoComida extends Comida{
     private boolean diaDelPlatoFrances;
     private boolean propina;
 
-    public CostoComida(String nombre, String tipo, String modoPreparacion, double calorias, double precio, int cantiMinutosParaPreparacion) {
-        super(nombre, tipo, modoPreparacion, calorias, precio, cantiMinutosParaPreparacion);
+    public CostoComida(String nombre, String tipo, String modoPreparacion) {
+        super(nombre, tipo, modoPreparacion);
         this.diaAgitado = false;
         this.diaDelPlatoFrances = false;
         this.propina = false;
     }
-
+/*
     public boolean getDiaAgitado() {
         return diaAgitado;
     }
@@ -44,7 +44,7 @@ public class CostoComida extends Comida{
 
         this.propina = propina;
         super.setPrecio(super.getPrecio()+super.getPrecio()*PROPINA);
-    }
+    }*/
 
 
 }

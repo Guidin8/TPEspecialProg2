@@ -41,6 +41,7 @@ public  class Pedido {
         }
     }
 
+    /*
     public  double costoTotalDeMesa() {
         double subtotal = 0;
         for (int posiPedido = 0; posiPedido < this.platosDeLaMesa.size(); posiPedido++) {
@@ -48,6 +49,7 @@ public  class Pedido {
         }
         return subtotal;
     }
+    */
 
 
 
