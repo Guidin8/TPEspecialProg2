@@ -1,10 +1,10 @@
 package App;
 
-import especialidad.Especialidad;
+import criterioComida.CriterioComida;
 
 public class Estacion {
     private String nombre;
-    private Especialidad especialidad;
+    private CriterioComida especialidad;
     private Comida comida;
 
     public Estacion(String nombre) {
@@ -25,8 +25,8 @@ public class Estacion {
         this.nombre = nombre;
     }
 
-    public void setEspecialidad(Especialidad especialidad) {
-        this.especialidad = especialidad;
+    public void setEspecialidad(CriterioComida criterioComida) {
+        this.especialidad = criterioComida;
     }
 
     public void setComida(Comida comida){

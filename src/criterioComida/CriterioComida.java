@@ -1,7 +1,7 @@
-package especialidad;
+package criterioComida;
 
 import App.Comida;
 
-public interface Especialidad {
+public interface CriterioComida {
     boolean cumple(Comida comida);
 }
