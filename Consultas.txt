@@ -1,0 +1,3 @@
+Si el CriterioComida de estacion para que reciba todas puede ser null-
+
+Consulta el precio de la comida, el adicional si puede ser asi
