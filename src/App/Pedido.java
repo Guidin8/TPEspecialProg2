@@ -1,3 +1,7 @@
+package App;
+
+import criterioComida.CriterioComida;
+
 import java.util.ArrayList;
 
 public  class Pedido {

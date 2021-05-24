@@ -1,4 +1,4 @@
-import App.Comida;
+package App;
 
 public class Plato {
     private Comida comidaPedida;

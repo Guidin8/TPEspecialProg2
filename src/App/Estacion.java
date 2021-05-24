@@ -4,16 +4,21 @@ import criterioComida.CriterioComida;
 
 public class Estacion {
     private String nombre;
-    private CriterioComida especialidad;
+    private CriterioComida criterioComida;
     private Comida comida;
 
     public Estacion(String nombre) {
         this.nombre = nombre;
     }
 
+    public Estacion(String nombre, CriterioComida criterioComida){
+        this.nombre = nombre;
+        this.criterioComida = criterioComida;
+    }
+
     public boolean recibeComida(Comida comida){
-        if (especialidad == null) return true;
-        if (especialidad.cumple(comida)) return true;
+        if (criterioComida == null) return true;
+        if (criterioComida.cumple(comida)) return true;
         return false;
     }
 
@@ -26,7 +31,7 @@ public class Estacion {
     }
 
     public void setEspecialidad(CriterioComida criterioComida) {
-        this.especialidad = criterioComida;
+        this.criterioComida = criterioComida;
     }
 
     public void setComida(Comida comida){

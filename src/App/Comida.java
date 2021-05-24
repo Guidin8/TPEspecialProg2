@@ -1,6 +1,6 @@
 package App;
 
-public class Comida {
+public abstract class Comida {
     private String nombre;
     private String tipo;
     private String modoPreparacion;
@@ -34,6 +34,9 @@ public class Comida {
     public void setModoPreparacion(String modoPreparacion) {
         this.modoPreparacion = modoPreparacion;
     }
+
+    public abstract int getTiempo();
+    public abstract int getCalorias();
 
     @Override
     public boolean equals(Object o) {
