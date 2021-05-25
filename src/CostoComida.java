@@ -1,21 +1,22 @@
-import App.Comida;
+import app.*;
+import criterioAdicional.CriterioAdicional;
 
-public class CostoComida extends Comida {
-    //private double costoInicial; lo saco porque el costo esta en Comidas
-    private static final double PROPINA=0.10;
-    private static final double DIAAGITADO=0.32;
-    private static final double PLATOFRANCES=0.55;
-    private boolean diaAgitado;
-    private boolean diaDelPlatoFrances;
-    private boolean propina;
-
-    public CostoComida(String nombre, String tipo, String modoPreparacion) {
-        super(nombre, tipo, modoPreparacion);
-        this.diaAgitado = false;
-        this.diaDelPlatoFrances = false;
-        this.propina = false;
+public class CostoComida extends CriterioAdicional {
+    private double porcentaje;
+    public CostoComida(String denominacion,double porcentaje) {
+        super(denominacion);
+        this.porcentaje=porcentaje;
     }
-/*
+
+    @Override
+    public double getPorcentaje() {
+        return this.porcentaje;
+    }
+
+
+
+
+   /*
     public boolean getDiaAgitado() {
         return diaAgitado;
     }

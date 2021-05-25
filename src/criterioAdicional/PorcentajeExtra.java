@@ -3,13 +3,12 @@ package criterioAdicional;
 public class PorcentajeExtra extends CriterioAdicional{
     private double porcentaje;
 
-    public PorcentajeExtra(String denominacion) {
+    public PorcentajeExtra(String denominacion, double porcentaje) {
         super(denominacion);
+        this.porcentaje=porcentaje;
     }
 
-    public void setPorcentaje(double porcentaje) {
-        this.porcentaje = porcentaje;
-    }
+
 
     @Override
     public double getPorcentaje() {

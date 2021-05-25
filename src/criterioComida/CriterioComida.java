@@ -1,6 +1,6 @@
 package criterioComida;
 
-import App.Comida;
+import app.Comida;
 
 public interface CriterioComida {
     boolean cumple(Comida comida);

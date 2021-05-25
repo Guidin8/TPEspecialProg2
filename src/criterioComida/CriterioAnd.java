@@ -1,6 +1,6 @@
 package criterioComida;
 
-import App.Comida;
+import app.Comida;
 
 public class CriterioAnd implements CriterioComida{
     CriterioComida criterio1;

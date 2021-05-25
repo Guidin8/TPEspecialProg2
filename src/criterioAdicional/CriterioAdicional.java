@@ -1,5 +1,5 @@
 package criterioAdicional;
-
+import app.Pedido;
 public abstract class CriterioAdicional {
     private String denominacion;
 

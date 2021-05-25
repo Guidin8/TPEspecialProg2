@@ -1,5 +1,4 @@
 package criterioAdicional;
-
 import java.util.ArrayList;
 
 public class CriteriosVarios extends CriterioAdicional{

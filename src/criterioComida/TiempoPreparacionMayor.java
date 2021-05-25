@@ -1,6 +1,6 @@
 package criterioComida;
 
-import App.Comida;
+import app.Comida;
 
 public class TiempoPreparacionMayor implements CriterioComida{
     private int tiempoPreparacion;

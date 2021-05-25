@@ -1,4 +1,4 @@
-package App;
+package app;
 
 public abstract class Comida {
     private String nombre;
@@ -37,6 +37,7 @@ public abstract class Comida {
 
     public abstract int getTiempo();
     public abstract int getCalorias();
+    public abstract double getPrecio();
 
     @Override
     public boolean equals(Object o) {
@@ -44,5 +45,10 @@ public abstract class Comida {
         return this.nombre.equals(comida.getNombre());
     }
 
-
+    @Override
+    public String toString() {
+        return "Comida{" +
+                "nombre='" + nombre + '\'' +
+                '}'+'\n';
+    }
 }

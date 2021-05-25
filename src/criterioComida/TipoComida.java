@@ -1,6 +1,6 @@
 package criterioComida;
 
-import App.Comida;
+import app.Comida;
 
 public class TipoComida implements CriterioComida{
     private String tipoComida;
