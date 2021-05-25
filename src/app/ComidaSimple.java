@@ -1,8 +1,5 @@
 package app;
 
-
-import java.time.LocalDate;
-
 public class ComidaSimple extends Comida {
     private double precio;
     private int calorias;
@@ -14,7 +11,6 @@ public class ComidaSimple extends Comida {
         this.calorias = calorias;
         this.tiempo = tiempo;
     }
-
 
     @Override
     public int getTiempo() {

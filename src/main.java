@@ -2,8 +2,6 @@ import app.*;
 import criterioAdicional.*;
 import criterioComida.*;
 
-
-
 public class main {
     public static void main (String args[]){
         Cocina palacio =new Cocina();

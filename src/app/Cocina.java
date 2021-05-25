@@ -11,6 +11,7 @@ public class Cocina {
     private CriterioComida adicionalComida;
     private CriterioAdicional adicionalEspecial;
     private double porcentajeComida;
+
     public Cocina() {
         pedidos = new ArrayList<Pedido>();
         estaciones = new ArrayList<Estacion>();
@@ -38,13 +39,10 @@ public class Cocina {
         return adicionalEspecial.getPorcentaje()/100;
     }
 
-
-
     public void agregarCriterioAdicionalComida(CriterioComida criterio ,double porcentaje){
         this.adicionalComida=criterio;
         this.porcentajeComida=porcentaje;
     }
-
 
     public void setAdicionalEspecial(CriterioAdicional adicionalComida) {
         this.adicionalEspecial = adicionalComida;

@@ -2,6 +2,7 @@ package criterioAdicional;
 import java.util.ArrayList;
 
 public class CriteriosVarios extends CriterioAdicional{
+
     private ArrayList<CriterioAdicional> criterios;
 
     public CriteriosVarios(String denominacion) {

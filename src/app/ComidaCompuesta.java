@@ -2,6 +2,7 @@ package app;
 import java.util.ArrayList;
 
 public class ComidaCompuesta extends Comida{
+
     ArrayList<Comida> comidasQueLaComponen;
 
     public ComidaCompuesta(String nombre, String tipo, String modoPreparacion) {
