@@ -1,3 +1,6 @@
+import CriteriosParaCostoComida.AdicionalPorPorcentaje;
+import CriteriosParaCostoComida.Descuento;
+import CriteriosParaCostoComida.SumarAdicionalExtra;
 import app.*;
 import criterioAdicional.*;
 import criterioComida.*;
@@ -14,17 +17,29 @@ public class main {
         macarons.addComidaSimple(ganache);
         macarons.addComidaSimple(tapaMacarons);
 
-        Pedido mesa1= new Pedido(1,"pepe");
+        /*Pedido mesa1= new Pedido(1,"pepe");
         TipoComida esPostre= new TipoComida("postre");
         palacio.agregarCriterioAdicionalComida(esPostre,10);
         mesa1.agregarAlPedido(macarons);
         mesa1.agregarAlPedido(macarons);
         mesa1.agregarAlPedido(macarons);
 
-        System.out.println((palacio.getCostoPedido(mesa1)));
+        System.out.println(("Mesa 1 "+ palacio.getCostoPedido(mesa1)));*/
 
-        System.out.println(mesa1.getPlatosDeLaMesa());
 
+        //TODO OJO ACA PRUEBO EL ENGENDRO QUE HICE VER CON FEDE
+
+        Pedido mesa2=new Pedido(2,"pepe2");
+        mesa2.agregarAlPedido(macarons);
+        mesa2.agregarAlPedido(macarons);
+        mesa2.agregarAlPedido(macarons);
+        //AdicionalPorPorcentaje porcentaje=new AdicionalPorPorcentaje("cualquiera",100);
+        //palacio.addCriterioCobroAdicional(porcentaje);
+        //Descuento descuento=new Descuento("descontar",10);
+        //palacio.addCriterioCobroAdicional(descuento);
+        //SumarAdicionalExtra sumo=new SumarAdicionalExtra("extra",80);
+        //palacio.addCriterioCobroAdicional(sumo);
+        System.out.println("Mesa 2 "+palacio.cerrarMesa(mesa2));
 
 
 

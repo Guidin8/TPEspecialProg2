@@ -1,5 +1,9 @@
 package app;
 
+import CriteriosParaCostoComida.AdicionalPorPorcentaje;
+import CriteriosParaCostoComida.CriterioParaCostoComida;
+import CriteriosParaCostoComida.Descuento;
+import CriteriosParaCostoComida.SumarAdicionalExtra;
 import criterioAdicional.CriterioAdicional;
 import criterioComida.CriterioComida;
 
@@ -11,9 +15,15 @@ public class Cocina {
     private CriterioComida adicionalComida;
     private CriterioAdicional adicionalEspecial;
     private double porcentajeComida;
+
+    //TODO ver con FEDE
+    private CriterioParaCostoComida criterioParaCosto;
+
+
     public Cocina() {
         pedidos = new ArrayList<Pedido>();
         estaciones = new ArrayList<Estacion>();
+
     }
 
     public void addPedido(Pedido pedido){
@@ -35,7 +45,7 @@ public class Cocina {
         if (adicionalEspecial==null){
             return 0;
         }
-        return adicionalEspecial.getPorcentaje()/100;
+        return adicionalEspecial.getPorcentaje();
     }
 
 
@@ -57,6 +67,39 @@ public class Cocina {
             }
         }
     }
+  //TODO VER CON FEDE
+
+     public void addCriterioCobroAdicional(CriterioParaCostoComida criterio){
+        this.criterioParaCosto=criterio;
+     }
+
+
+     //el porcentaje es parametro al igual que el nombre y pedido
+     public double adicionarPorcentaje(Pedido pedido,String nombre, double porcentaje){
+         CriterioParaCostoComida porcent=new AdicionalPorPorcentaje(nombre,porcentaje);
+         // pedido debe adicionar esto
+         pedido.costoTotalDeMesa()*(1+porcent.agregarAlMonto()/100);
+     }
+     public double adicionarMonto(Pedido pedido,String nombre, double porcentaje){
+        CriterioParaCostoComida porcent=new SumarAdicionalExtra(nombre,porcentaje);
+        return pedido.costoTotalDeMesa()+porcent.agregarAlMonto();
+    }
+
+    public double descontarPorcentaje(Pedido pedido,String nombre, double porcentaje){
+        CriterioParaCostoComida porcent=new Descuento(nombre,porcentaje);
+        return pedido.costoTotalDeMesa()-(1+porcent.agregarAlMonto()/100);
+    }
+
+    public double cerrarMesa(Pedido pedido){
+        double total=0;
+        total+=pedido.costoTotalDeMesa()+adicionarPorcentaje(pedido,);
+        return total;
+
+
+    }
+
+
+
 
 }
 

@@ -1,5 +1,7 @@
 package criterioAdicional;
 
+import app.Comida;
+
 public class PorcentajeExtra extends CriterioAdicional{
     private double porcentaje;
 
@@ -7,7 +9,6 @@ public class PorcentajeExtra extends CriterioAdicional{
         super(denominacion);
         this.porcentaje=porcentaje;
     }
-
 
 
     @Override

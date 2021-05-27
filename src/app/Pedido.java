@@ -1,4 +1,6 @@
 package app;
+import CriteriosParaCostoComida.CriterioParaCostoComida;
+import criterioAdicional.CriterioAdicional;
 import criterioAdicional.PorcentajeExtra;
 import criterioComida.CriterioComida;
 
@@ -15,9 +17,10 @@ public  class Pedido {
         this.platosDeLaMesa =new ArrayList<Comida>();
     }
 
-    public int getNroMesa() {
+    int getNroMesa() {
         return nroMesa;
     }
+
 
     public void setNroMesa(int nroMesa) {
         this.nroMesa = nroMesa;
@@ -36,12 +39,21 @@ public  class Pedido {
         return platosDeLaMesa;
     }
 
+    /**
+     * agrega a cada mesa un nuevo pedido
+     * @param platoParaAgregar
+     */
     public void agregarAlPedido(Comida platoParaAgregar ){
         platosDeLaMesa.add(platoParaAgregar);
 
     }
 
-
+    /**
+     * esta funcion devuelve el costo total del pedido de la mesa
+     * @param criterio  es el criterio
+     * @param porcentaje
+     * @return
+     */
     public  double costoTotalDeMesa(CriterioComida criterio, double porcentaje) {
         double subtotal = 0;
         for(Comida plato:this.platosDeLaMesa){
@@ -58,7 +70,6 @@ public  class Pedido {
         double subtotal = 0;
         for(Comida plato:this.platosDeLaMesa){
            subtotal+=plato.getPrecio();
-
         }
         return subtotal;
     }
