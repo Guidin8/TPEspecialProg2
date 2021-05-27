@@ -1,5 +1,7 @@
 package criterioAdicional;
+
 import app.Comida;
+
 
 public abstract class CriterioAdicional {
     private String denominacion;

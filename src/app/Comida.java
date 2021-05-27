@@ -1,6 +1,7 @@
 package app;
 
 public abstract class Comida {
+
     private String nombre;
     private String tipo;
     private String modoPreparacion;
