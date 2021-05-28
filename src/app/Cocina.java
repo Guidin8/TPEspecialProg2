@@ -37,9 +37,9 @@ public class Cocina {
 
     public double getCostoPedido(Pedido pedido){
         if(adicionalComida!=null){
-            return pedido.costoTotalDeMesa(adicionalComida,importeAdicional) * (1+porcentajeAdicional());
+            return pedido.costoTotalDeMesa(adicionalComida,importeAdicional) * (1+porcentajeAdicional()/100);
         }
-        return pedido.costoTotalDeMesa() * (1+porcentajeAdicional());
+        return pedido.costoTotalDeMesa() * (1+porcentajeAdicional()/100);
     }
 
     public double porcentajeAdicional(){
