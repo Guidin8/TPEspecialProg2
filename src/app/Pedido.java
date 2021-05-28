@@ -53,14 +53,14 @@ public  class Pedido {
     /**
      * esta funcion devuelve el costo total del pedido de la mesa
      * @param criterio  es el criterio
-     * @param porcentaje
+     * @param importe
      * @return
      */
-    public  double costoTotalDeMesa(CriterioComida criterio, double porcentaje) {
+    public  double costoTotalDeMesa(CriterioComida criterio, double importe) {
         double subtotal = 0;
         for(Comida plato:this.platosDeLaMesa){
             if(criterio.cumple(plato)){
-               subtotal+= plato.getPrecio() * (1+porcentaje/100);
+               subtotal+= plato.getPrecio() + importe;
             }else{
                 subtotal+=plato.getPrecio();
             }

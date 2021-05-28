@@ -14,7 +14,7 @@ public class Cocina {
     private ArrayList<Estacion> estaciones;
     private CriterioComida adicionalComida;
     private CriterioAdicional adicionalEspecial;
-    private double porcentajeComida;
+    private double importeAdicional;
 
 
     //TODO ver con FEDE
@@ -23,7 +23,8 @@ public class Cocina {
     public Cocina() {
         pedidos = new ArrayList<Pedido>();
         estaciones = new ArrayList<Estacion>();
-
+        adicionalComida = null;
+        adicionalEspecial = null;
     }
 
     public void addPedido(Pedido pedido){
@@ -36,7 +37,7 @@ public class Cocina {
 
     public double getCostoPedido(Pedido pedido){
         if(adicionalComida!=null){
-            return pedido.costoTotalDeMesa(adicionalComida,porcentajeComida) * (1+porcentajeAdicional());
+            return pedido.costoTotalDeMesa(adicionalComida,importeAdicional) * (1+porcentajeAdicional());
         }
         return pedido.costoTotalDeMesa() * (1+porcentajeAdicional());
     }
@@ -48,9 +49,9 @@ public class Cocina {
         return adicionalEspecial.getPorcentaje();
     }
 
-    public void agregarCriterioAdicionalComida(CriterioComida criterio ,double porcentaje){
+    public void agregarCriterioAdicionalComida(CriterioComida criterio ,double importe){
         this.adicionalComida=criterio;
-        this.porcentajeComida=porcentaje;
+        this.importeAdicional=importe;
     }
 
     public void setAdicionalEspecial(CriterioAdicional adicionalComida) {
