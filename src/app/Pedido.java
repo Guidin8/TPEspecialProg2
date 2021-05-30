@@ -1,10 +1,6 @@
 package app;
 
-import CriteriosParaCostoComida.CriterioParaCostoComida;
-import criterioAdicional.CriterioAdicional;
-
-import criterioAdicional.PorcentajeExtra;
-import criterioComida.CriterioComida;
+import criterioCosto.CriterioCosto;
 
 import java.util.ArrayList;
 
@@ -47,35 +43,26 @@ public  class Pedido {
      */
     public void agregarAlPedido(Comida platoParaAgregar ){
         platosDeLaMesa.add(platoParaAgregar);
-
     }
 
     /**
      * esta funcion devuelve el costo total del pedido de la mesa
      * @param criterio  es el criterio
-     * @param importe
      * @return
      */
-    public  double costoTotalDeMesa(CriterioComida criterio, double importe) {
+    public double costoTotalDeMesa(CriterioCosto criterio) {
         double subtotal = 0;
         for(Comida plato:this.platosDeLaMesa){
-            if(criterio.cumple(plato)){
-               subtotal+= plato.getPrecio() + importe;
-            }else{
-                subtotal+=plato.getPrecio();
-            }
+            subtotal += plato.getPrecio() + criterio.costoAdicionalComida(plato);
         }
         return subtotal;
     }
 
-    public  double costoTotalDeMesa() {
+    public double costoTotalDeMesa() {
         double subtotal = 0;
         for(Comida plato:this.platosDeLaMesa){
            subtotal+=plato.getPrecio();
         }
         return subtotal;
     }
-
-
-
 }
