@@ -2,6 +2,7 @@ package app;
 import CriteriosParaCostoComida.CriterioParaCostoComida;
 
 import java.util.ArrayList;
+import criterioCosto.*;
 
 public class ComidaCompuesta extends Comida{
 

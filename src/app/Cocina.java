@@ -29,11 +29,21 @@ public class Cocina {
         return pedido.costoTotalDeMesa();
     }
 
-    public void asignarPedidoEstacion ( Comida comidaParaEstacion){
+    public void setCostoAdicionalComida(CriterioCosto costoAdicionalComida) {
+        this.costoAdicionalComida = costoAdicionalComida;
+    }
+
+    public void asignarPedidoEstacion (Pedido comidaParaEstacion){
+        //TODO VER FEDE
         for (Estacion sector: this.estaciones){
-            if(sector.recibeComida(comidaParaEstacion)){
-                sector.setComida(comidaParaEstacion);
+            for(Comida comida:comidaParaEstacion.getPlatosDeLaMesa()){
+                if(sector.recibeComida(comida)){
+                    sector.setComida(comida);
+                }
             }
+            /*if(sector.recibeComida(comidaParaEstacion)){
+                sector.setComida(comidaParaEstacion);
+            }*/
         }
     }
 
