@@ -9,6 +9,11 @@ public class ModoPreparacion implements CriterioComida{
         this.modoPreparacion = modoPreparacion;
     }
 
+    /**
+     * devuelve true en el caso de que una comida tenga el mismo modo de preparacion del buscado
+     * @param comida
+     * @return
+     */
     @Override
     public boolean cumple(Comida comida) {
         return comida.getModoPreparacion().toLowerCase().equals(modoPreparacion.toLowerCase());

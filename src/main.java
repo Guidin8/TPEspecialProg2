@@ -1,9 +1,6 @@
-import CriteriosParaCostoComida.AdicionalPorPorcentaje;
-import CriteriosParaCostoComida.Descuento;
-import CriteriosParaCostoComida.SumarAdicionalExtra;
-import app.*;
-import criterioAdicional.*;
 import criterioComida.*;
+import app.*;
+
 
 public class main {
     public static void main (String args[]){

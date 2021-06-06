@@ -8,7 +8,11 @@ public class CriterioPrecioMenor implements CriterioComida{
     public CriterioPrecioMenor(double precio) {
         this.precio = precio;
     }
-
+    /**
+     * devuelve true en caso de que el precio de una comida sean menor al que se pide
+     * @param comida
+     * @return
+     */
     @Override
     public boolean cumple(Comida comida) {
         return comida.getPrecio() < precio;

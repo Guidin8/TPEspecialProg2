@@ -9,6 +9,11 @@ public class TiempoPreparacionMayor implements CriterioComida{
         this.tiempoPreparacion = tiempoPreparacion;
     }
 
+    /**
+     * devuelve true en el caso de que el tiempo de preparacion de una comida sea mayor al buscado
+     * @param comida
+     * @return
+     */
     @Override
     public boolean cumple(Comida comida) {
         return comida.getTiempo() > tiempoPreparacion;
