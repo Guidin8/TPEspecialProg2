@@ -1,9 +1,10 @@
-import CriteriosParaCostoComida.AdicionalPorPorcentaje;
-import CriteriosParaCostoComida.Descuento;
-import CriteriosParaCostoComida.SumarAdicionalExtra;
+;
 import app.*;
-import criterioAdicional.*;
 import criterioComida.*;
+import criterioCosto.CriterioCosto;
+import criterioCosto.CriterioCostoAnd;
+import criterioCosto.ImporteCondicional;
+import criterioCosto.PorcentajeAdicional;
 
 public class main {
     public static void main (String args[]){
@@ -37,9 +38,21 @@ public class main {
         //palacio.addCriterioCobroAdicional(descuento);
         //SumarAdicionalExtra sumo=new SumarAdicionalExtra("extra",80);
         //palacio.addCriterioCobroAdicional(sumo);
-        System.out.println("Mesa 2 "+palacio.cerrarMesa(mesa2));
+        //System.out.println("Mesa 2 "+palacio.cerrarMesa(mesa2));
 
-
-
+        CriterioComida preparacion = new ModoPreparacion("horno");
+        CriterioComida calorias = new CantidadCaloriasMayor(50);
+        CriterioAnd criterioComida = new CriterioAnd(preparacion, calorias);
+        CriterioCosto importe = new ImporteCondicional(criterioComida,50, 150);
+        CriterioCosto mozo = new PorcentajeAdicional(20);
+        //$100
+        //50
+        //20
+        //85
+        CriterioCosto miercoles = new PorcentajeAdicional(25);
+        CriterioCostoAnd andCosto = new CriterioCostoAnd(importe, mozo);
+        CriterioCostoAnd costoFinal = new CriterioCostoAnd(andCosto, miercoles);
+        palacio.setCriterio(costoFinal);
+        palacio.getCostoPedido(mesa2);
     }
 }

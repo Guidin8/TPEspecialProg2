@@ -29,12 +29,18 @@ public class Cocina {
         return pedido.costoTotalDeMesa();
     }
 
-    public void asignarPedidoEstacion ( Comida comidaParaEstacion){
+    public void asignarPedidoEstacion (Pedido pedido){
         for (Estacion sector: this.estaciones){
-            if(sector.recibeComida(comidaParaEstacion)){
-                sector.setComida(comidaParaEstacion);
+            for (Comida comidaParaEstacion: pedido.getComidas()) {
+                if(sector.recibeComida(comidaParaEstacion)){
+                    sector.setComida(comidaParaEstacion);
+                }
             }
         }
+    }
+
+    public void setCriterio(CriterioCosto criterio){
+        costoAdicionalComida = criterio;
     }
 
 }

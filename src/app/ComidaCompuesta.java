@@ -1,5 +1,4 @@
 package app;
-import CriteriosParaCostoComida.CriterioParaCostoComida;
 
 import java.util.ArrayList;
 

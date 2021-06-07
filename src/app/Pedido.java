@@ -65,4 +65,10 @@ public  class Pedido {
         }
         return subtotal;
     }
+
+    public ArrayList<Comida> getComidas() {
+        ArrayList<Comida> comidas = new ArrayList<>();
+        comidas.addAll(platosDeLaMesa);
+        return comidas;
+    }
 }
