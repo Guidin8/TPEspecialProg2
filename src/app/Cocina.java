@@ -61,8 +61,10 @@ public class Cocina {
             for(Comida comida:comidaParaEstacion.getPlatosDeLaMesa()){
                 if(sector.recibeComida(comida)){
                     sector.setComida(comida);
+                    break;
                 }
             }
+
         }
     }
 
