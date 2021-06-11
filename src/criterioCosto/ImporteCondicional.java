@@ -14,6 +14,12 @@ public class ImporteCondicional implements CriterioCosto{
         this.importeNoCumple = importeNoCumple;
     }
 
+    /**
+     * devuelve el costo adicional de una comida, en el caso de que cumpla con un criterio, devuelve un importe,
+     * pero si no cumple, devuelve otro importe
+     * @param comida
+     * @return
+     */
     @Override
     public double costoAdicionalComida(Comida comida) {
         if (criterio.cumple(comida))

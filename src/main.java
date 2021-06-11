@@ -1,13 +1,9 @@
-;
 import app.*;
 import criterioComida.*;
-import criterioCosto.CriterioCosto;
-import criterioCosto.CriterioCostoAnd;
-import criterioCosto.ImporteCondicional;
-import criterioCosto.PorcentajeAdicional;
+import criterioCosto.*;
 
-public class main {
-    public static void main (String args[]){
+public class Main {
+    public static void main (String[] args){
         Cocina palacio =new Cocina();
 
         ComidaCompuesta macarons = new ComidaCompuesta("macarons","postre","mucho trabajo");
@@ -45,14 +41,10 @@ public class main {
         CriterioAnd criterioComida = new CriterioAnd(preparacion, calorias);
         CriterioCosto importe = new ImporteCondicional(criterioComida,50, 150);
         CriterioCosto mozo = new PorcentajeAdicional(20);
-        //$100
-        //50
-        //20
-        //85
         CriterioCosto miercoles = new PorcentajeAdicional(25);
-        CriterioCostoAnd andCosto = new CriterioCostoAnd(importe, mozo);
-        CriterioCostoAnd costoFinal = new CriterioCostoAnd(andCosto, miercoles);
+        CriterioCostoSuma andCosto = new CriterioCostoSuma(importe, mozo);
+        CriterioCostoSuma costoFinal = new CriterioCostoSuma(andCosto, miercoles);
         palacio.setCriterio(costoFinal);
-        palacio.getCostoPedido(mesa2);
+        System.out.println(palacio.getCostoPedido(mesa2));
     }
 }
