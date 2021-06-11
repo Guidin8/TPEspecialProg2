@@ -29,7 +29,7 @@ public class Estacion {
      */
     public boolean recibeComida(Comida comida){
         if (criterioComida == null) return true;
-        if ((criterioComida.cumple(comida))&&(comida==null)) return true;
+        if ((criterioComida.cumple(comida))&&(comida!=null)) return true;
         return false;
     }
 
